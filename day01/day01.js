@@ -1,21 +1,6 @@
-// const sampleInput = `1000
-// 2000
-// 3000
+// part one
 
-// 4000
-
-// 5000
-// 6000
-
-// 7000
-// 8000
-// 9000
-
-// 10000`;
-
-// const sampleGroup = '1000\n2000\n3000';
-
-const calories = `9609
+const puzzleInput = `9609
 7601
 7142
 5278
@@ -2267,10 +2252,35 @@ const calories = `9609
 11806
 `;
 
-// divide the list into an array of groups
+// reduces values into one numer
+const sumReducer = (sum, num) => sum + num;
 
+// divides list into arrays of numbers
+const getSumOfGroup = (group) =>
+  group
+    .toString() // changes puzzleInput to a string (Was having issues)
+    .split('\n') // splits the lines at a new line
+    .map(Number) // maps data through the Number function
+    .reduce(sumReducer); // reduces numbers high to low
+
+// divide the list into an array of groups
+const numberGroups = puzzleInput.split('\n\n');
 
 // find the sum of each group
+const groupSums = numberGroups.map(getSumOfGroup);
 
+// find the largest sum using spread operator for array
+const maxSum = Math.max(...groupSums);
 
-// find the largest sum
+// console.log(getSumOfGroup(maxSum));
+
+// part two
+
+// find top three sums
+
+// sort the sums array decending order
+const sortedSums = [...groupSums].sort((num1, num2) => num2 - num1);
+// add up the top three sums
+const top3Sums = sortedSums.slice(0, 3);
+const sumOfTop3 = top3Sums.reduce(sumReducer, 0);
+console.log(sumOfTop3);
