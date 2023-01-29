@@ -1,19 +1,49 @@
-// const sampleInput =
-//   `A Y
-//   B X
-//   C Z`;
 
-// const playerOneChoices = [
-//   { A: 'ROCK' },
-//   { B: 'PAPER' },
-//   { C: 'SCISSORS' }
-// ];
 
-// const playerTwoChoices = [
-//   { X: 'ROCK' },
-//   { Y: 'PAPER' },
-//   { Z: 'SCISSORS' }
-// ];
+//////////////////////////////////////////////////////////////////////
+const sampleInput =
+  `A Y
+  B X
+  C Z`;
+
+
+const playerOneChoices = [
+  { A: 'ROCK' },
+  { B: 'PAPER' },
+  { C: 'SCISSORS' }
+];
+
+const playerTwoChoices = [
+  { X: 'ROCK' },
+  { Y: 'PAPER' },
+  { Z: 'SCISSORS' }
+];
+
+const renderInput = () => {
+    sampleInput.split(' ');
+    console.log(sampleInput);
+}
+
+console.log(renderInput());
+
+const playGame = () => {
+  if (playerOneChoice == playerTwoChoice) {
+    return 'Draw!'
+  }
+  if (playerOneChoice == 'ROCK' && playerTwoChoice == 'PAPER') {
+    console.log('They win!');
+  }
+
+  if (playerOneChoice == 'PAPER' && playerTwoChoice == 'SCISSORS') {
+    console.log('They win!');
+  }
+
+  if (playerOneChoice == 'SCISSORS' && playerTwoChoice == 'ROCK') {
+    console.log('They win!');
+  } else {
+    console.log('You win!');
+  }
+}
 
 // // logs all playerOneChoices objects
 // // for (const el of playerOneChoices) {
