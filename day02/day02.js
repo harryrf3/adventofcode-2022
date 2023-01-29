@@ -1,13 +1,12 @@
-
-
-//////////////////////////////////////////////////////////////////////
 const sampleInput =
   `A Y
   B X
   C Z`;
 
+
 let playerOneScore = 0;
 let playerTwoScore = 0;
+
 const playerOneChoices = [
   { A: 'ROCK' },
   { B: 'PAPER' },
@@ -21,8 +20,7 @@ const playerTwoChoices = [
 ];
 
 const renderInput = () => {
-    sampleInput.split(' ');
-    console.log(sampleInput);
+    return sampleInput.split(' ');
 }
 
 console.log(renderInput());
@@ -50,6 +48,25 @@ const playGame = () => {
     playerOneScore += 3
     playerTwoScore += 7
   }
+
+  if (playerTwoChoice == 'ROCK' && playerOneChoice == 'PAPER') {
+    console.log('You win!');
+    playerOneScore += 7
+    playerTwoScore += 1
+  }
+
+  if (playerTwoChoice == 'PAPER' && playerOneChoice == 'SCISSORS') {
+    console.log('You win!');
+    playerOneScore += 9
+    playerTwoScore += 2
+  }
+
+  if (playerTwoChoice == 'SCISSORS' && playerOneChoice == 'ROCK') {
+    console.log('You win!');
+    playerOneScore += 9
+    playerTwoScore += 2
+  }
+
 
 }
 
