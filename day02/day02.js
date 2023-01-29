@@ -25,8 +25,57 @@ const playerTwoChoices = [
 //   console.log(el);
 // }
 
+// ! this will always return true, which would be false in this context.
+// const calculateWinner = () => {
+//   if playerOneChoices[0] === playerTwoChoices[0] {
+//     return 'Draw!';
+//   }
+// }
 
+const calculateWinner = () => {
+  if (playerOneChoice === playerTwoChoice) {
+    return "Draw"
+  }
+  if (playerOneChoice === playerTwoChoice) {
+    return "Draw"
+  }
+}
 
+const getPlayerOneChoice = () => {
+  const choice = Math.floor(Math.random() * 3) + 1;
+  switch (choice) {
+    case 1:
+      A: 'ROCK';
+      break;
+    case 2:
+      B: 'PAPER';
+      break;
+    case 3:
+      C: 'SCISSORS';
+      break;
+  }
+  return choice;
+}
+
+const getPlayerTwoChoice = () => {
+  const choice = Math.floor(Math.random() * 3) + 1;
+  switch (choice) {
+    case 1:
+      A: 'ROCK';
+      break;
+    case 2:
+      B: 'PAPER';
+      break;
+    case 3:
+      C: 'SCISSORS';
+      break;
+  }
+  return choice;
+}
+
+const playerOneChoice = getPlayerOneChoice();
+
+const playerTwoChoice = getPlayerTwoChoice();
 /* 
  Points:
  1 - Rock
