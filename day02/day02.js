@@ -3,17 +3,29 @@ const sampleInput =
   B X
   C Z`;
 
-const computerChoice = [
+const playerOneChoices = [
   { A: 'ROCK' },
   { B: 'PAPER' },
   { C: 'SCISSORS' }
 ];
 
-const playerChoice = [
+const playerTwoChoices = [
   { X: 'ROCK' },
   { Y: 'PAPER' },
   { Z: 'SCISSORS' }
 ];
+
+// logs all playerOneChoices objects
+// for (const el of playerOneChoices) {
+//   console.log(el);
+// }
+
+// logs all playerTwoChoices objects
+// for (const el of playerTwoChoices) {
+//   console.log(el);
+// }
+
+
 
 /* 
  Points:
@@ -38,8 +50,7 @@ const playerChoice = [
   3 - 2
 */
 
-for (const round in sampleInput) {
-  // compare each shape in round
-  sampleInput.split(' ');
-  console.log(sampleInput);
-}
+// create score variable for each computer and user
+let computerScore = 0;
+let userScore = 0;
+
