@@ -6,7 +6,8 @@ const sampleInput =
   B X
   C Z`;
 
-
+let playerOneScore = 0;
+let playerTwoScore = 0;
 const playerOneChoices = [
   { A: 'ROCK' },
   { B: 'PAPER' },
@@ -28,21 +29,28 @@ console.log(renderInput());
 
 const playGame = () => {
   if (playerOneChoice == playerTwoChoice) {
+    playerOneScore += 3
+    playerTwoScore += 3
     return 'Draw!'
   }
   if (playerOneChoice == 'ROCK' && playerTwoChoice == 'PAPER') {
     console.log('They win!');
+    playerOneScore += 1
+    playerTwoScore += 8
   }
 
   if (playerOneChoice == 'PAPER' && playerTwoChoice == 'SCISSORS') {
     console.log('They win!');
+    playerOneScore += 2
+    playerTwoScore += 9
   }
 
   if (playerOneChoice == 'SCISSORS' && playerTwoChoice == 'ROCK') {
     console.log('They win!');
-  } else {
-    console.log('You win!');
+    playerOneScore += 3
+    playerTwoScore += 7
   }
+
 }
 
 // // logs all playerOneChoices objects
